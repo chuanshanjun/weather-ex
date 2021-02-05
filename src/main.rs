@@ -59,6 +59,6 @@ struct Input {
 async fn main() -> Result<(), ExitFailure> {
     let input = Input::from_args();
     let resp = W::get(&input.city).await?;
-    println!("{} \n 当前温度: {} \n 最高温度: {} \n 最低温度: {} \n 湿度: {}", input.city , resp.main.temp, resp.main.temp_max, resp.main.temp_min, resp.main.humidity);
+    println!("{} \n 天气情况: {} \n 当前温度: {} \n 最高温度: {} \n 最低温度: {} \n 湿度: {}", input.city, resp.weather.details.main ,resp.main.temp, resp.main.temp_max, resp.main.temp_min, resp.main.humidity);
     Ok(())
 }

@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'weather-ex'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=weather-ex",
+                    "--package=weather-ex"
+                ],
+                "filter": {
+                    "name": "weather-ex",
+                    "kind": "bin"
+                }
+            },
+            "args": ["Shanghai"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'weather-ex'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=weather-ex",
+                    "--package=weather-ex"
+                ],
+                "filter": {
+                    "name": "weather-ex",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
